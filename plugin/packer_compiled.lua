@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/Users/howie6879/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
+  ["lsp-setup.nvim"] = {
+    loaded = true,
+    path = "/Users/howie6879/.local/share/nvim/site/pack/packer/start/lsp-setup.nvim",
+    url = "https://github.com/junnplus/lsp-setup.nvim"
+  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/Users/howie6879/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
@@ -144,6 +149,16 @@ _G.packer_plugins = {
     path = "/Users/howie6879/.local/share/nvim/site/pack/packer/start/lush.nvim",
     url = "https://github.com/rktjmp/lush.nvim"
   },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/Users/howie6879/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/Users/howie6879/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/Users/howie6879/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -153,11 +168,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/howie6879/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
-  },
-  ["nvim-lsp-installer"] = {
-    loaded = true,
-    path = "/Users/howie6879/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
-    url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
     loaded = true,

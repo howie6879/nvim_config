@@ -52,7 +52,15 @@ return require('packer').startup(function()
   --------------------- LSP --------------------
   -- https://github.com/williamboman/nvim-lsp-installer
   -- LspInstallInfo
-  use("williamboman/nvim-lsp-installer")
+  -- use("williamboman/nvim-lsp-installer")
+  use {
+    'junnplus/lsp-setup.nvim',
+    requires = {
+        'neovim/nvim-lspconfig',
+        'williamboman/mason.nvim',
+        'williamboman/mason-lspconfig.nvim',
+    }
+  }
   -- Lspconfig
   use({ "neovim/nvim-lspconfig" })
   -- 补全引擎
