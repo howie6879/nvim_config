@@ -53,6 +53,7 @@ return require('packer').startup(function()
   -- https://github.com/williamboman/nvim-lsp-installer
   -- LspInstallInfo
   -- use("williamboman/nvim-lsp-installer")
+  -- https://github.com/junnplus/lsp-setup.nvim
   use {
     'junnplus/lsp-setup.nvim',
     requires = {
@@ -62,7 +63,7 @@ return require('packer').startup(function()
     }
   }
   -- Lspconfig
-  use({ "neovim/nvim-lspconfig" })
+  -- use({ "neovim/nvim-lspconfig" })
   -- 补全引擎
   use("hrsh7th/nvim-cmp")
   -- snippet 引擎

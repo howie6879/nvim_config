@@ -1,5 +1,14 @@
 require('lsp-setup').setup({
     servers = {
-        pyright = require("lsp.config.pyright")
+        -- pylsp = {
+        --     plugins = {
+        --         pycodestyle = {
+        --           ignore = {'W391'},
+        --           maxLineLength = 120
+        --         },
+        --         pylint =  { enabled = false }
+        --       }
+        -- }
+        pylsp = require("lsp.config.pylsp")
     }
 })

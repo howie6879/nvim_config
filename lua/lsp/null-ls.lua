@@ -39,7 +39,10 @@ null_ls.setup({
     formatting.rustfmt,
     -- Python
     formatting.isort,
-    formatting.black.with({ extra_args = { "--fast" } }),
+    formatting.black,
+    -- formatting.black.with({ extra_args = { "--fast" } }),
+    -- formatting.black.with({ args = { "--quiet", "-" }, extra_args = { "--line-length", "120" } }),
+
     -----------------------------------------------------
     -- Ruby
     -- gem install rubocop
@@ -70,7 +73,7 @@ null_ls.setup({
   diagnostics_format = "[#{s}] #{m}",
   on_attach = function(client)
     if client.server_capabilities.documentFormattingProvider then
-      vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+      vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
     end
   end,
 })
