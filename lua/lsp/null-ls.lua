@@ -42,38 +42,20 @@ null_ls.setup({
     formatting.black,
     -- formatting.black.with({ extra_args = { "--fast" } }),
     -- formatting.black.with({ args = { "--quiet", "-" }, extra_args = { "--line-length", "120" } }),
-
-    -----------------------------------------------------
-    -- Ruby
-    -- gem install rubocop
-    formatting.rubocop,
-    -----------------------------------------------------
-    -- formatting.fixjson,
-    -- Diagnostics  ---------------------
-    diagnostics.eslint.with({
-      prefer_local = "node_modules/.bin",
-    }),
-    -- diagnostics.markdownlint,
-    -- markdownlint-cli2
-    -- diagnostics.markdownlint.with({
-    --   prefer_local = "node_modules/.bin",
-    --   command = "markdownlint-cli2",
-    --   args = { "$FILENAME", "#node_modules" },
-    -- }),
-    --
-    -- code actions ---------------------
-    code_actions.gitsigns,
-    code_actions.eslint.with({
-      prefer_local = "node_modules/.bin",
-    }),
   },
   -- #{m}: message
   -- #{s}: source name (defaults to null-ls if not specified)
   -- #{c}: code (if available)
   diagnostics_format = "[#{s}] #{m}",
+  -- on_attach = function(client)
+  --   if client.server_capabilities.documentFormattingProvider then
+  --     vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
+  --   end
+  -- end,
+
   on_attach = function(client)
-    if client.server_capabilities.documentFormattingProvider then
-      vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
+    if client.server_capabilities.document_formatting then
+      vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()")
     end
-  end,
+  end
 })
