@@ -5,29 +5,33 @@ cmp.setup({
   snippet = {
     expand = function(args)
       -- For `vsnip` users.
-      vim.fn["vsnip#anonymous"](args.body)
+      -- vim.fn["vsnip#anonymous"](args.body)
 
       -- For `luasnip` users.
       -- require('luasnip').lsp_expand(args.body)
 
       -- For `ultisnips` users.
-      -- vim.fn["UltiSnips#Anon"](args.body)
+      vim.fn["UltiSnips#Anon"](args.body)
 
       -- For `snippy` users.
       -- require'snippy'.expand_snippet(args.body)
     end,
+  },
+  window = {
+    completion = cmp.config.window.bordered(),
+    -- documentation = cmp.config.window.bordered(),
   },
   -- 来源
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
     { name = "nvim_lsp_signature_help" },
     -- For vsnip users.
-    { name = "vsnip" },
+    -- { name = "vsnip" },
     { name = "buffer" },
     -- For luasnip users.
     -- { name = 'luasnip' },
     --For ultisnips users.
-    -- { name = 'ultisnips' },
+    { name = 'ultisnips' },
     -- -- For snippy users.
     -- { name = 'snippy' },
   }, { { name = "path" } }),
@@ -40,6 +44,7 @@ cmp.setup({
 
 -- Use buffer source for `/`.
 cmp.setup.cmdline("/", {
+  mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = "buffer" },
   },

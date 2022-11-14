@@ -52,8 +52,8 @@ map("v", "J", ":move '>+1<CR>gv-gv", opt)
 map("v", "K", ":move '<-2<CR>gv-gv", opt)
 
 -- 上下滚动浏览
-map("n", "<C-j>", "4j", opt)
-map("n", "<C-k>", "4k", opt)
+-- map("n", "<C-j>", "4j", opt)
+-- map("n", "<C-k>", "4k", opt)
 -- ctrl u / ctrl + d  只移动9行，默认移动半屏
 map("n", "<C-u>", "9k", opt)
 map("n", "<C-d>", "9j", opt)
@@ -134,7 +134,7 @@ map("n", "zz", ":foldclose<CR>", opt)
 map("n", "zo", ":foldopen<CR>", opt)
 
 -- vista
-map("n", "<A-\\>", ":Vista!!<CR>", opt)
+map("n", "<leader>\\", ":Vista!!<CR>", opt)
 -- pydocstring
 map("n", "<leader>c", ":Pydocstring<CR>", opt)
 -- mundo
@@ -142,7 +142,7 @@ map("n", "<leader>u", ":MundoToggle<CR>", opt)
 
 -- nvim-tree
 -- alt + m 键打开关闭tree
-map("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
+map("n", "<≈-m>", ":NvimTreeToggle<CR>", opt)
 -- 列表快捷键
 pluginKeys.nvimTreeList = {
   -- 打开文件或文件夹
@@ -166,8 +166,8 @@ pluginKeys.nvimTreeList = {
 
 -- bufferline
 -- 左右Tab切换
-map("n", "<A-p>", ":BufferLineCyclePrev<CR>", opt)
-map("n", "<A-n>", ":BufferLineCycleNext<CR>", opt)
+map("n", "<C-p>", ":BufferLineCyclePrev<CR>", opt)
+map("n", "<C-n>", ":BufferLineCycleNext<CR>", opt)
 -- 关闭
 --"moll/vim-bbye"
 map("n", "<A-w>", ":Bdelete!<CR>", opt)
@@ -177,9 +177,9 @@ map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
 
 -- Telescope
 -- 查找文件
-map("n", "<C-p>", ":Telescope find_files<CR>", opt)
+map("n", "<A-p>", ":Telescope find_files<CR>", opt)
 -- 全局搜索
-map("n", "<C-f>", ":Telescope live_grep<CR>", opt)
+map("n", "<A-f>", ":Telescope live_grep<CR>", opt)
 
 -- Telescope 列表中 插入模式快捷键
 pluginKeys.telescopeList = {

@@ -9,7 +9,9 @@ local list_keys = require('keybindings').nvimTreeList
 nvim_tree.setup({
     -- 不显示 git 状态图标
     git = {
-        enable = false,
+        enable = true,
+        ignore = true,
+        timeout = 400,
     },
     -- project plugin 需要这样设置
     update_cwd = true,
@@ -51,7 +53,7 @@ nvim_tree.setup({
     -- wsl install -g wsl-open
     -- https://github.com/4U6U57/wsl-open/
     system_open = {
-        cmd = 'wsl-open', -- mac 直接设置为 open
+        cmd = 'open', -- mac 直接设置为 open
     },
 })
 -- 自动关闭

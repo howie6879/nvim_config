@@ -35,14 +35,19 @@ return require('packer').startup(function()
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
   -- 常见编程语言代码段
   use("rafamadriz/friendly-snippets")
+  -- Comment plugin
+  use { "tpope/vim-commentary", event = "VimEnter" }
   -- vim-pydocstring
   use("heavenshell/vim-pydocstring")
   -- ui
   use("onsails/lspkind-nvim")
   -- indent-blankline
   use("lukas-reineke/indent-blankline.nvim")
+  -- Automatic insertion and deletion of a pair of characters
+  use { "Raimondi/delimitMate", event = "InsertEnter" }
+  -- 鼠标移动到关键词高亮
+  use { "itchyny/vim-cursorword" }
   -- 代码格式化
-  -- use("mhartington/formatter.nvim")
   -- NullLsInfo
   use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
   -- 函数列表
@@ -68,12 +73,14 @@ return require('packer').startup(function()
   use("hrsh7th/nvim-cmp")
   -- snippet 引擎
   use("hrsh7th/vim-vsnip")
+  use { "quangnguyen30192/cmp-nvim-ultisnips", after = { "nvim-cmp", "ultisnips" } }
   -- 补全源
   use("hrsh7th/cmp-vsnip")
   use("hrsh7th/cmp-nvim-lsp") -- { name = nvim_lsp }
   use("hrsh7th/cmp-buffer") -- { name = 'buffer' },
   use("hrsh7th/cmp-path") -- { name = 'path' }
   use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
+  use { "SirVer/ultisnips", event = "InsertEnter" }
   -- Git command inside vim
   use { "tpope/vim-fugitive" }
   use { "airblade/vim-gitgutter" }
