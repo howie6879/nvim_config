@@ -1,28 +1,21 @@
 local common = require("lsp.common-config")
 local opts = {
-  capabilities = common.capabilities,
-  flags = common.flags,
-  on_attach = function(client, bufnr)
-    common.disableFormat(client)
-    common.keyAttach(bufnr)
-  end,
-  settings = {
-    pylsp = {
-      plugins = {
-        pycodestyle = {
-          ignore = {'W391', 'E501'},
-          maxLineLength = 120
-        },
-        -- pycodestyle =  { enabled = false },
-        -- pyflakes =  { enabled = false },
-        -- pylint =  { enabled = false }
-      }
+    capabilities = common.capabilities,
+    flags = common.flags,
+    on_attach = function(client, bufnr)
+        common.disableFormat(client)
+        common.keyAttach(bufnr)
+    end,
+    settings = {
+        pylsp = {
+            plugins = {
+                pycodestyle = {ignore = {'W391'}, maxLineLength = 120}
+                -- pycodestyle =  { enabled = false },
+                -- pyflakes =  { enabled = false },
+                -- pylint =  { enabled = false }
+            }
+        }
     }
-  },
 }
 
-return {
-  on_setup = function(server)
-    server.setup(opts)
-  end,
-}
+return {on_setup = function(server) server.setup(opts) end}
