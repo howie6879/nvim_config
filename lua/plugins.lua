@@ -51,6 +51,8 @@ return require('packer').startup(function()
     use { "Raimondi/delimitMate", event = "InsertEnter" }
     -- 鼠标移动到关键词高亮
     use { "itchyny/vim-cursorword" }
+    -- terminals
+    use {"akinsho/toggleterm.nvim", tag = 'v2.*'}
     -- 代码格式化
     -- NullLsInfo
     use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
@@ -59,18 +61,6 @@ return require('packer').startup(function()
     -- Show undo history visually
     use { "simnalamburt/vim-mundo", cmd = { "MundoToggle", "MundoShow" } }
     --------------------- LSP --------------------
-    -- https://github.com/williamboman/nvim-lsp-installer
-    -- LspInstallInfo
-    -- use("williamboman/nvim-lsp-installer")
-    -- https://github.com/junnplus/lsp-setup.nvim
-    -- use {
-    --   'junnplus/lsp-setup.nvim',
-    --   requires = {
-    --       'neovim/nvim-lspconfig',
-    --       'williamboman/mason.nvim',
-    --       'williamboman/mason-lspconfig.nvim',
-    --   }
-    -- }
     -- installer
     use({ "williamboman/mason.nvim" })
     use({ "williamboman/mason-lspconfig.nvim" })
