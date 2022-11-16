@@ -23,6 +23,6 @@ ident_blankline.setup({
     -- char = '¦'
     -- char = '┆'
     -- char = '│'
-    -- char = "⎸",
-    char = "▏"
+    char = "⎸",
+    -- char = "▏"
 })
