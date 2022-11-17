@@ -31,14 +31,24 @@ null_ls.setup({
                 "graphql"
             },
             prefer_local = "node_modules/.bin"
-        }), -- rustfmt
-        -- rustup component add rustfmt
+        }),
+        -- rustfmt
         formatting.rustfmt,
+
+        -- json
+        -- npm i -g fixjson
+        formatting.fixjson,
+
         -- python
         formatting.isort,
-        formatting.black
+        formatting.black,
         -- formatting.black.with({ extra_args = { "--fast" } }),
         -- formatting.black.with({ args = { "--quiet", "-" }, extra_args = { "--line-length", "120" } }),
+
+        diagnostics.eslint.with({
+            prefer_local = "node_modules/.bin",
+        }),
+        -- code actions ---------------------
     },
     -- #{m}: message
     -- #{s}: source name (defaults to null-ls if not specified)

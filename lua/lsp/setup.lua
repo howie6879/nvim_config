@@ -30,13 +30,26 @@ mason.setup({
 
 -- mason-lspconfig uses the `lspconfig` server names in the APIs it exposes - not `mason.nvim` package names
 -- https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md
-mason_config.setup({ensure_installed = {"pylsp"}})
+mason_config.setup({
+    ensure_installed = {
+        -- https://github.com/python-lsp/python-lsp-server
+        "pylsp",
+        -- https://github.com/python-lsp/python-lsp-server
+        -- npm i -g vscode-langservers-extracted
+        -- npm i -g prettier
+        -- npm i -g  -g fixjson
+        "jsonls",
+    }
+})
 
 -- 安装列表
 -- { key: 服务器名， value: 配置文件 }
 -- key 必须为下列网址列出的 server name，不可以随便写
 -- https://github.com/williamboman/nvim-lsp-installer#available-lsps
-local servers = {pylsp = require("lsp.config.pylsp")}
+local servers = {
+    pylsp = require("lsp.config.pylsp"),
+    jsonls = require("lsp.config.json"),
+}
 
 for name, config in pairs(servers) do
     if config ~= nil and type(config) == "table" then

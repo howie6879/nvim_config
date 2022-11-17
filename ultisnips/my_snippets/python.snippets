@@ -36,3 +36,52 @@ def main():
 if __name__ == "__main__":
 	main()
 endsnippet
+
+snippet py_main "python main" b
+if __name__ == "__main__":
+	$0
+endsnippet
+
+snippet flask_api "Python Flask API Function" b
+from logging import Logger
+
+from flask import current_app
+
+from src.common import (
+    ResponseCode,
+    ResponseField,
+    ResponseReply,
+    UniResponse,
+    auth_action_params,
+    response_handle,
+)
+from src.config import Config
+
+
+@auth_action_params(keys=[], data=[])
+def main(request, rpc_request, request_params: dict, *args, **kwargs):
+    """
+    $1
+    eg: http://127.0.0.1:8432/v1/$2
+    {
+        "" : ""
+    }
+    字段说明：
+    :param request: 由flask提供
+    :param rpc_request: gRPC服务
+    :param request_params: 请求参数
+    :param args:
+    :param kwargs:
+    :return:
+    """
+    # 获取基本配置
+    app_logger: Logger = current_app.config["app_logger"]
+    app_config: Config = current_app.config["app_config"]
+    # 获取请求参数
+    data: dict = request_params["data"]
+    $3
+
+    # 设置默认响应值
+    result = UniResponse.SUCCESS
+    return response_handle(request=request, dict_value=result)
+endsnippet

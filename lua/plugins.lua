@@ -42,6 +42,7 @@ return require('packer').startup(function()
     -- Comment plugin
     use { "tpope/vim-commentary", event = "VimEnter" }
     -- vim-pydocstring
+    -- pip install doq
     use("heavenshell/vim-pydocstring")
     -- ui
     use("onsails/lspkind-nvim")
@@ -52,7 +53,10 @@ return require('packer').startup(function()
     -- 鼠标移动到关键词高亮
     use { "itchyny/vim-cursorword" }
     -- terminals
-    use {"akinsho/toggleterm.nvim", tag = 'v2.*'}
+    use { "akinsho/toggleterm.nvim", tag = 'v2.*' }
+    -- Git command inside vim
+    use { "tpope/vim-fugitive" }
+    use { "airblade/vim-gitgutter" }
     -- 代码格式化
     -- NullLsInfo
     use({ "jose-elias-alvarez/null-ls.nvim", requires = "nvim-lua/plenary.nvim" })
@@ -81,7 +85,6 @@ return require('packer').startup(function()
     use("hrsh7th/cmp-path") -- { name = 'path' }
     use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
     use { "SirVer/ultisnips", event = "InsertEnter" }
-    -- Git command inside vim
-    use { "tpope/vim-fugitive" }
-    use { "airblade/vim-gitgutter" }
+    -- JSON 增强
+    use("b0o/schemastore.nvim")
 end)
