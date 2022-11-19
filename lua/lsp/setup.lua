@@ -37,7 +37,7 @@ mason_config.setup({
         -- https://github.com/python-lsp/python-lsp-server
         -- npm i -g vscode-langservers-extracted
         -- npm i -g prettier
-        -- npm i -g  -g fixjson
+        -- npm i -g fixjson
         "jsonls",
     }
 })
