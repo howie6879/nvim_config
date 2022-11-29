@@ -3,20 +3,19 @@ local opts = {
     capabilities = common.capabilities,
     flags = common.flags,
     on_attach = function(client, bufnr)
-        -- use fixjson to format
-        -- https://github.com/rhysd/fixjson
         common.disableFormat(client)
         common.keyAttach(bufnr)
     end,
     settings = {
-        json = {
-            schemas = require("schemastore").json.schemas(),
-        },
-    },
+        pylsp = {
+            plugins = {
+                pycodestyle = { ignore = { 'W391', 'E231' }, maxLineLength = 120 }
+                -- pycodestyle =  { enabled = false },
+                -- pyflakes =  { enabled = false },
+                -- pylint =  { enabled = false }
+            }
+        }
+    }
 }
 
-return {
-    on_setup = function(server)
-        server.setup(opts)
-    end,
-}
+return { on_setup = function(server) server.setup(opts) end }
