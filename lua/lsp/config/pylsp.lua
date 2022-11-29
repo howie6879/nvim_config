@@ -9,7 +9,7 @@ local opts = {
     settings = {
         pylsp = {
             plugins = {
-                pycodestyle = { ignore = { 'W391', 'E231' }, maxLineLength = 120 }
+                pycodestyle = { ignore = { 'W391', 'E231', 'E203' }, maxLineLength = 120 }
                 -- pycodestyle =  { enabled = false },
                 -- pyflakes =  { enabled = false },
                 -- pylint =  { enabled = false }
