@@ -29,13 +29,14 @@ null_ls.setup({
                 "json",
                 "yaml",
                 "graphql",
-                "markdown",
+                "markdown"
             },
             prefer_local = "node_modules/.bin"
         }),
         -- rustfmt
-        formatting.rustfmt,
-
+        formatting.rustfmt.with({ filetypes = { "rust" } }),
+        -- cargo install taplo-cli
+        formatting.taplo,
         -- json
         -- npm i -g fixjson
         formatting.fixjson,

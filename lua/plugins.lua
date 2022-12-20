@@ -4,6 +4,11 @@ return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     -- gruvbox theme
     use { "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
+    -- nightfox
+    -- https://github.com/EdenEast/nightfox.nvim
+    use "EdenEast/nightfox.nvim"
+    -- solarized
+    use 'shaunsingh/solarized.nvim'
     -- onedark
     use 'navarasu/onedark.nvim'
     -- tokyonight
@@ -70,6 +75,8 @@ return require('packer').startup(function()
     use({ "williamboman/mason-lspconfig.nvim" })
     -- Lspconfig
     use({ "neovim/nvim-lspconfig" })
+    -- Rust
+    use 'simrat39/rust-tools.nvim'
     -- 补全引擎
     use("hrsh7th/nvim-cmp")
     -- snippet 引擎

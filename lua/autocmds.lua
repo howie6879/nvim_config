@@ -8,7 +8,7 @@ autocmd("TermOpen", { group = myAutoGroup, command = "startinsert" })
 -- 保存时自动格式化
 autocmd("BufWritePre", {
     group = myAutoGroup,
-    pattern = { "*.lua", "*.py", "*.sh", "*.json", "*.py" },
+    pattern = { "*.lua", "*.py", "*.sh", "*.json", "*.md", "*.toml", "*.rs" },
     callback = function() vim.lsp.buf.format() end
 })
 

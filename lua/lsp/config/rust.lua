@@ -3,7 +3,7 @@ local opts = {
     capabilities = common.capabilities,
     flags = common.flags,
     on_attach = function(client, bufnr)
-        common.disableFormat(client)
+        -- common.disableFormat(client)
         common.keyAttach(bufnr)
     end,
     settings = {
@@ -18,20 +18,18 @@ local opts = {
     },
 }
 
--- return {
---     on_setup = function(server)
---         local ok_rt, rust_tools = pcall(require, "rust-tools")
---         if not ok_rt then
---             print("Failed to load rust tools, will set up `rust_analyzer` without `rust-tools`.")
---             server.setup(opts)
---         else
---             -- We don't want to call lspconfig.rust_analyzer.setup() when using rust-tools
---             rust_tools.setup({
---                 server = opts,
---                 dap = require("dap.nvim-dap.config.rust"),
---             })
---         end
---     end,
--- }
-
-return { on_setup = function(server) server.setup(opts) end }
+return {
+    on_setup = function(server)
+        local ok_rt, rust_tools = pcall(require, "rust-tools")
+        if not ok_rt then
+            print("Failed to load rust tools, will set up `rust_analyzer` without `rust-tools`.")
+            server.setup(opts)
+        else
+            -- We don't want to call lspconfig.rust_analyzer.setup() when using rust-tools
+            rust_tools.setup({
+                server = opts,
+                -- dap = require("dap.nvim-dap.config.rust"),
+            })
+        end
+    end,
+}

@@ -37,6 +37,7 @@ mason_config.setup({
         "pylsp",
         -- https://github.com/williamboman/mason.nvim/blob/main/PACKAGES.md#rust-analyzer
         "rust_analyzer",
+        "taplo",
         -- https://github.com/williamboman/mason.nvim/blob/main/PACKAGES.md#json-lsp
         -- npm i -g vscode-langservers-extracted
         -- npm i -g prettier
@@ -54,6 +55,7 @@ local servers = {
     pylsp = require("lsp.config.pylsp"),
     jsonls = require("lsp.config.json"),
     rust_analyzer = require("lsp.config.rust"),
+    taplo = require("lsp.config.taplo"), -- toml
     yamlls = require("lsp.config.yamlls"),
 }
 

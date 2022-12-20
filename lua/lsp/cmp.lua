@@ -18,21 +18,21 @@ cmp.setup({
         end
     },
     window = {
-        completion = cmp.config.window.bordered()
-        -- documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
     },
     -- 来源
     sources = cmp.config.sources({
-        {name = "nvim_lsp"}, {name = "nvim_lsp_signature_help"},
+        { name = "nvim_lsp" }, { name = "nvim_lsp_signature_help" },
         -- For vsnip users.
         -- { name = "vsnip" },
-        {name = "buffer"}, -- For luasnip users.
+        { name = "buffer" }, -- For luasnip users.
         -- { name = 'luasnip' },
         -- For ultisnips users.
-        {name = 'ultisnips'}
+        { name = 'ultisnips' }
         -- -- For snippy users.
         -- { name = 'snippy' },
-    }, {{name = "path"}}),
+    }, { { name = "path" } }),
 
     -- 快捷键
     mapping = require("keybindings").cmp(cmp),
@@ -43,11 +43,11 @@ cmp.setup({
 -- Use buffer source for `/`.
 cmp.setup.cmdline("/", {
     mapping = cmp.mapping.preset.cmdline(),
-    sources = {{name = "buffer"}}
+    sources = { { name = "buffer" } }
 })
 
 -- Use cmdline & path source for ':'.
 cmp.setup.cmdline(":", {
     mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({{name = "path"}}, {{name = "cmdline"}})
+    sources = cmp.config.sources({ { name = "path" } }, { { name = "cmdline" } })
 })
