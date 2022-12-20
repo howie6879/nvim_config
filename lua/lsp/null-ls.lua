@@ -15,7 +15,7 @@ null_ls.setup({
         --  brew install shfmt
         formatting.shfmt, -- StyLua
         formatting.stylua, -- frontend
-        formatting.prettier.with({ -- 比默认少了 markdown
+        formatting.prettier.with({
             filetypes = {
                 "javascript",
                 "javascriptreact",
@@ -28,7 +28,8 @@ null_ls.setup({
                 "html",
                 "json",
                 "yaml",
-                "graphql"
+                "graphql",
+                "markdown",
             },
             prefer_local = "node_modules/.bin"
         }),

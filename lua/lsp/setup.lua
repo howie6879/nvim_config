@@ -33,12 +33,16 @@ mason.setup({
 mason_config.setup({
     ensure_installed = {
         -- https://github.com/python-lsp/python-lsp-server
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pylsp
         "pylsp",
-        -- https://github.com/python-lsp/python-lsp-server
+        -- https://github.com/williamboman/mason.nvim/blob/main/PACKAGES.md#rust-analyzer
+        "rust_analyzer",
+        -- https://github.com/williamboman/mason.nvim/blob/main/PACKAGES.md#json-lsp
         -- npm i -g vscode-langservers-extracted
         -- npm i -g prettier
         -- npm i -g fixjson
         "jsonls",
+        "yamlls",
     }
 })
 
@@ -49,6 +53,8 @@ mason_config.setup({
 local servers = {
     pylsp = require("lsp.config.pylsp"),
     jsonls = require("lsp.config.json"),
+    rust_analyzer = require("lsp.config.rust"),
+    yamlls = require("lsp.config.yamlls"),
 }
 
 for name, config in pairs(servers) do
