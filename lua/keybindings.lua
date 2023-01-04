@@ -141,7 +141,7 @@ pluginKeys.mapToggleTerm = function(toggleterm)
     vim.keymap.set({ "n", "t" }, "<leader>tb", toggleterm.toggleB)
     vim.keymap.set({ "n", "t" }, "<leader>tc", toggleterm.toggleC)
     vim.keymap.set({ "n", "t" }, "<leader>tg", toggleterm.toggleG)
-  end
+end
 
 -- treesitter 折叠
 map("n", "zz", ":foldclose<CR>", opt)
@@ -156,7 +156,7 @@ map("n", "<leader>u", ":MundoToggle<CR>", opt)
 
 -- nvim-tree
 -- alt + m 键打开关闭tree
-map("n", "<≈-m>", ":NvimTreeToggle<CR>", opt)
+map("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
 -- 列表快捷键
 pluginKeys.nvimTreeList = {
     -- 打开文件或文件夹
