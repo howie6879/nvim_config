@@ -150,7 +150,7 @@ map("n", "zo", ":foldopen<CR>", opt)
 -- vista
 map("n", "<leader>\\", ":Vista!!<CR>", opt)
 -- pydocstring
-map("n", "<leader>c", ":Pydocstring<CR>", opt)
+map("n", "<C-_>", ":Pydocstring<CR>", opt)
 -- mundo
 map("n", "<leader>u", ":MundoToggle<CR>", opt)
 
