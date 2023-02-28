@@ -125,7 +125,7 @@ pluginKeys.cmp = function(cmp)
             behavior = cmp.ConfirmBehavior.Replace
         }),
         -- 如果窗口内容太多，可以滚动
-        ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+        ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs( -4), { "i", "c" }),
         ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" })
     }
 end
@@ -162,10 +162,10 @@ pluginKeys.nvimTreeList = {
     -- 打开文件或文件夹
     { key = { "<CR>", "o", "<2-LeftMouse>" }, action = "edit" },
     -- 分屏打开文件
-    { key = "v", action = "vsplit" }, { key = "h", action = "split" },
+    { key = "v",                              action = "vsplit" }, { key = "h", action = "split" },
     -- 显示隐藏文件
-    { key = "i", action = "toggle_custom" }, -- 对应 filters 中的 custom (node_modules)
-    { key = ".", action = "toggle_dotfiles" }, -- Hide (dotfiles)
+    { key = "i",    action = "toggle_custom" }, -- 对应 filters 中的 custom (node_modules)
+    { key = ".",    action = "toggle_dotfiles" }, -- Hide (dotfiles)
     -- 文件操作
     { key = "<F5>", action = "refresh" }, { key = "a", action = "create" },
     { key = "d", action = "remove" }, { key = "r", action = "rename" },
